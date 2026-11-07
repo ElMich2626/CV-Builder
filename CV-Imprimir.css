@@ -1,0 +1,369 @@
+/* VARIABLES DE COLOR */
+
+:root {
+    --color-primary: #0b2d4f;
+    --color-primary-light: #eaf0f5;
+    --color-secondary: #40566b;
+    --color-heading: #172b3a;
+    --color-text: #1f2933;
+    --color-border: #aab4bd;
+    --color-border-light: #d7dde2;
+    --color-sidebar: #f5f7f9;
+    --color-white: #ffffff;
+}
+
+/* CV IMPRESIÓN */
+
+@page {
+    size: A4;
+    margin: 10mm 15mm;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10.5pt;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    background: var(--color-white);
+    line-height: 1.35;
+}
+
+/* ESTRUCTURA GENERAL */
+
+.cv {
+    display: grid;
+    grid-template-columns: 30% 67%;
+    column-gap: 3%;
+    align-items: start;
+    width: 100%;
+}
+
+.cv-columns {
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 0;
+}
+
+.cv-main {
+    grid-column: 2;
+    grid-row: 3;
+    min-width: 0;
+}
+
+.cv-sidebar {
+    min-width: 0;
+    padding: 10px 11px;
+    background: var(--color-sidebar);
+    border-left: 3px solid var(--color-primary);
+}
+
+/* QR */
+
+.qr-code {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.2rem;
+}
+
+.qr-code img,
+.qr-code canvas {
+    display: block;
+    width: 15mm;
+    height: 15mm;
+}
+
+/* Certificados e idiomas: enlaces y QRs se muestran de forma uniforme. */
+.certifications li > a[data-qr="true"],
+.languages li > a[data-qr="true"] {
+    display: block;
+    width: fit-content;
+    margin-top: 2mm;
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 8pt;
+}
+
+.certifications li > a[data-qr="true"] .qr-code,
+.languages li > a[data-qr="true"] .qr-code {
+    display: block;
+    width: 15mm;
+    margin: 2mm 0 0;
+}
+
+/* ENCABEZADO */
+
+.cv-header {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+    padding-bottom: 9px;
+    border-bottom: 3px solid var(--color-primary);
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 25pt;
+    line-height: 1.05;
+    letter-spacing: 0.2px;
+}
+
+.profile {
+    margin: 7px 0 0 0;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+/* CONTACTO */
+
+.contact {
+    grid-column: 1 / -1;
+    margin-bottom: 13px;
+    padding: 6px 0 9px 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.contact h2 {
+    display: none;
+}
+
+.contact p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    margin: 0;
+    font-size: 9pt;
+    font-weight: 500;
+}
+
+.contact a {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 6px;
+    padding: 4px 6px;
+    color: var(--color-text);
+    background: var(--color-primary-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.contact a::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Los contactos con QR forman un grupo visual separado, debajo de los que no tienen QR.
+   Pueden compartir fila entre sí y ajustarse automáticamente si no entran todos. */
+.contact a:has(.qr-code) {
+    justify-content: center;
+    margin-top: 8px;
+}
+
+/* QR integrado dentro de la tarjeta del contacto */
+.contact a .qr-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 15mm;
+    width: 15mm;
+    height: 15mm;
+    margin-left: 2px;
+}
+
+.contact a[href^="mailto:"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/svgs/solid/envelope.svg");
+}
+
+.contact a[href^="tel:"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/svgs/solid/phone.svg");
+}
+
+.contact a[href*="linkedin.com"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/svgs/brands/linkedin.svg");
+}
+
+.contact a[href*="github.com"]::before {
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/github.svg");
+}
+
+/* SECCIONES */
+
+section {
+    margin-bottom: 14px;
+}
+
+h2 {
+    position: relative;
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    color: var(--color-primary);
+    font-size: 12pt;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1.5px solid var(--color-primary);
+}
+
+h2::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 6px;
+    vertical-align: 2px;
+    background: var(--color-primary);
+}
+
+h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: 10.5pt;
+    line-height: 1.2;
+}
+
+h4 {
+    margin: 7px 0 3px 0;
+    color: var(--color-heading);
+    font-size: 9.5pt;
+}
+
+/* EXPERIENCIA Y EDUCACIÓN */
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.date {
+    flex-shrink: 0;
+    padding: 2px 6px;
+    color: var(--color-secondary);
+    background: var(--color-primary-light);
+    border-radius: 3px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.institution {
+    margin: 2px 0 4px 0;
+    color: var(--color-secondary);
+    font-size: 9pt;
+    font-weight: 600;
+}
+
+.experience-entry + .experience-entry,
+.education-entry + .education-entry {
+    margin-top: 12px;
+    padding-top: 9px;
+    border-top: 1px solid var(--color-border);
+}
+
+/* LISTAS */
+
+ul {
+    margin: 4px 0 6px 0;
+    padding-left: 16px;
+}
+
+li {
+    margin-bottom: 2px;
+    font-size: 9pt;
+    line-height: 1.3;
+}
+
+li::marker {
+    color: var(--color-secondary);
+}
+
+/* PÁRRAFOS */
+
+p {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+/* HABILIDADES TÉCNICAS */
+
+.technical-skills p {
+    margin-bottom: 5px;
+    font-size: 8.8pt;
+    line-height: 1.35;
+}
+
+.technical-skills strong {
+    color: var(--color-primary);
+}
+
+/* IDIOMAS */
+
+.languages p {
+    font-size: 9pt;
+}
+
+.languages a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 8pt;
+}
+
+/* HABILIDADES BLANDAS */
+
+.soft-skills p {
+    margin-bottom: 0;
+    font-size: 8.8pt;
+    line-height: 1.4;
+}
+
+/* BARRA VISUAL DEL CONTENIDO PRINCIPAL */
+
+.cv-main {
+    padding-left: 2px;
+}
+
+/* CONTROL DE SALTOS */
+
+.experience-entry,
+.education-entry {
+    break-inside: avoid;
+}
+
+h2,
+h3,
+h4 {
+    break-after: avoid;
+}
+
+/* IMPRESIÓN */
+
+@media print {
+    body {
+        background: var(--color-white);
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}

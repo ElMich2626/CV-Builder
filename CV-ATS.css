@@ -1,0 +1,148 @@
+@page {
+    size: A4;
+    margin: 5mm;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 11pt;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    background: #fff;
+    line-height: 1.35;
+}
+
+.cv {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.qr-code {
+  display: none !important;
+}
+
+/* Encabezado */
+
+.cv-header {
+    margin-bottom: 14px;
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    font-size: 20pt;
+    line-height: 1.1;
+}
+
+.profile {
+    margin: 0;
+}
+
+/* Secciones */
+
+section {
+    margin-bottom: 14px;
+}
+
+h2 {
+    margin: 0 0 7px 0;
+    padding-bottom: 2px;
+    font-size: 13pt;
+    line-height: 1.2;
+    border-bottom: 1px solid #000;
+}
+
+h3 {
+    margin: 0;
+    font-size: 11.5pt;
+    line-height: 1.2;
+}
+
+h4 {
+    margin: 8px 0 3px 0;
+    font-size: 11pt;
+}
+
+.technical-skills p {
+    margin-bottom: 3px;
+}
+
+.soft-skills p {
+    margin-bottom: 0;
+}
+
+/* Lineas entre secciones */
+
+.experience-entry + .experience-entry {
+    border-top: 1px solid #999;
+    padding-top: 5px;
+    margin-top: 7px;
+}
+
+.education-entry + .education-entry {
+    border-top: 1px solid #999;
+    padding-top: 5px;
+    margin-top: 7px;
+}
+
+/* Entradas de experiencia y educación */
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.date {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.institution {
+    margin: 2px 0 4px 0;
+}
+
+/* Listas */
+
+ul {
+    margin: 4px 0 7px 0;
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 2px;
+}
+
+/* Párrafos */
+
+p {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+/* Enlaces */
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Evitar cortes poco convenientes */
+
+.experience-entry,
+.education-entry {
+    break-inside: avoid;
+}
+
+h2,
+h3,
+h4 {
+    break-after: avoid;
+}

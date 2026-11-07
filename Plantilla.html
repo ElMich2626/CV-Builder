@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[NOMBRE] - CV</title>
+    <link rel="stylesheet" href="[ARCHIVO-CSS]" />
+  </head>
+
+  <body>
+    <main class="cv">
+      <!-- =========================================
+           ENCABEZADO
+           ========================================= -->
+
+      <header class="cv-header">
+        <h1>[NOMBRE COMPLETO]</h1>
+
+        <p class="profile">[PERFIL PROFESIONAL]</p>
+      </header>
+
+      <!-- =========================================
+           CONTACTO
+           ========================================= -->
+
+      <section class="contact">
+        <h2>Contacto</h2>
+
+        <p>
+          <a href="mailto:[EMAIL]">[EMAIL]</a>
+          <a href="tel:[TELEFONO-SIN-FORMATO]">[TELÉFONO]</a>
+        </p>
+        <p>
+          <!-- Repetir este enlace por cada perfil o plataforma que quieras mostrar.
+               Ejemplos: LinkedIn, GitHub, GitLab, portfolio, redes sociales, etc.
+               Reemplazar [RED-SOCIAL-LINK] por la URL completa y [RED-SOCIAL-NOMBRE]
+               por el texto visible del enlace. El QR se genera automáticamente. -->
+          <a href="[RED-SOCIAL-LINK]" data-qr="true">[RED-SOCIAL-NOMBRE]</a>
+          <!-- <a href="[RED-SOCIAL-LINK-2]" data-qr="true">[RED-SOCIAL-NOMBRE-2]</a> -->
+        </p>
+      </section>
+
+      <!-- =========================================
+           CONTENIDO PRINCIPAL
+           ========================================= -->
+
+      <div class="cv-main">
+        <!-- EXPERIENCIA -->
+
+        <section class="experience">
+          <h2>Experiencia Profesional</h2>
+
+          <article class="experience-entry">
+            <div class="entry-header">
+              <h3>[PUESTO]</h3>
+              <span class="date">[FECHA]</span>
+            </div>
+
+            <p class="institution">[INSTITUCIÓN, EMPRESA O CLIENTE]</p>
+
+            <ul>
+              <li>[TAREA O RESPONSABILIDAD]</li>
+              <li>[TAREA O RESPONSABILIDAD]</li>
+              <li>[TAREA O RESPONSABILIDAD]</li>
+            </ul>
+
+            <h4>[SUBSECCIÓN OPCIONAL]</h4>
+
+            <ul>
+              <li>[ELEMENTO]</li>
+              <li>[ELEMENTO]</li>
+            </ul>
+          </article>
+
+          <!--
+          Repetir .experience-entry por cada experiencia.
+          Eliminar .institution si no corresponde.
+          Eliminar h4 + ul si no existe una subsección.
+          -->
+        </section>
+
+        <!-- EDUCACIÓN -->
+
+        <section class="education">
+          <h2>Educación</h2>
+
+          <article class="education-entry">
+            <div class="entry-header">
+              <h3>[TÍTULO / FORMACIÓN]</h3>
+              <span class="date">[FECHA]</span>
+            </div>
+
+            <p class="institution">[INSTITUCIÓN]</p>
+
+            <ul>
+              <li>[DATO ADICIONAL]</li>
+            </ul>
+
+            <h4>[SUBSECCIÓN OPCIONAL]</h4>
+
+            <ul>
+              <li>[PROYECTO / ELEMENTO]</li>
+              <li>[PROYECTO / ELEMENTO]</li>
+            </ul>
+          </article>
+
+          <!--
+          Repetir .education-entry por cada formación.
+          -->
+        </section>
+      </div>
+
+      <!-- =========================================
+           COLUMNA LATERAL
+           ========================================= -->
+
+      <div class="cv-columns">
+        <aside class="cv-sidebar">
+          <!-- CERTIFICADOS-->
+
+          <section class="certifications">
+            <h2>Cursos y certificaciones</h2>
+
+            <ul>
+              <li>
+                [CURSO / CERTIFICADO]
+                <a href="[URL-CURSO-O-CERTIFICADO]" data-qr="true">[INSTITUCIÓN]</a>
+              </li>
+              <!-- Repetir un <li> por cada curso o certificación. -->
+            </ul>
+          </section>
+
+          <!-- IDIOMAS -->
+
+          <section class="languages">
+            <h2>Idiomas</h2>
+
+            <ul>
+              <li>
+                [IDIOMA Y NIVEL]
+                <a href="[URL-CERTIFICADO]" data-qr="true">[NOMBRE DEL CERTIFICADO]</a>
+              </li>
+              <li>[OTRO IDIOMA Y NIVEL]</li>
+              <!-- Repetir un <li> por cada idioma. -->
+            </ul>
+          </section>
+
+                    <!-- HABILIDADES TÉCNICAS -->
+
+          <section class="technical-skills">
+            <h2>Habilidades Técnicas</h2>
+
+            <p>
+              <strong>[CATEGORÍA]:</strong>
+              [HABILIDADES]
+            </p>
+
+            <p>
+              <strong>[CATEGORÍA]:</strong>
+              [HABILIDADES]
+            </p>
+
+            <!-- Repetir según las categorías existentes -->
+          </section>
+
+          <!-- HABILIDADES BLANDAS -->
+
+          <section class="soft-skills">
+            <h2>Habilidades Blandas</h2>
+
+            <p>[HABILIDADES BLANDAS]</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <!--
+      QRs para enlaces seleccionados: agregar data-qr="true" al <a>.
+      Los QRs se generan junto a los enlaces y su visibilidad depende del CSS: 
+      CV-ATS.css debe ocultarlos y CV-Imprimir.css debe mostrarlos.
+      La biblioteca se carga desde CDN, por lo que se necesita conexión a Internet
+      al abrir el HTML y generar/imprimir los QRs.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      (() => {
+        function generarQrs() {
+          if (typeof QRCode === "undefined") return;
+
+          document.querySelectorAll('a[data-qr="true"]').forEach((enlace) => {
+            const hrefOriginal = enlace.getAttribute("href") || "";
+            if (!hrefOriginal || hrefOriginal.includes("[")) return;
+            const destino = enlace.href;
+            if (!destino || !/^https?:\/\//i.test(destino)) return;
+            if (enlace.querySelector(".qr-code")) return;
+
+            const contenedor = document.createElement("span");
+            contenedor.className = "qr-code";
+            contenedor.setAttribute("aria-hidden", "true");
+            contenedor.setAttribute("data-qr-for", destino);
+            // El QR queda dentro del enlace; el CSS lo coloca debajo del texto.
+            enlace.appendChild(contenedor);
+
+            new QRCode(contenedor, {
+              text: destino,
+              width: 96,
+              height: 96,
+              correctLevel: QRCode.CorrectLevel.M,
+            });
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", generarQrs);
+        } else {
+          generarQrs();
+        }
+      })();
+    </script>
+  </body>
+</html>

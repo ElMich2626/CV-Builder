@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mariana López - CV</title>
+    <link rel="stylesheet" href="CV-Imprimir.css" />
+  </head>
+
+  <body>
+    <main class="cv">
+      <!-- =========================================
+           ENCABEZADO
+           ========================================= -->
+
+      <header class="cv-header">
+        <h1>MARIANA SOFÍA LÓPEZ</h1>
+
+        <p class="profile">Desarrolladora Backend Junior de Córdoba, Argentina, con formación en programación y experiencia en desarrollo de aplicaciones web. Con conocimientos en Java, Python, JavaScript, Git y bases de datos SQL. Interesada en crear soluciones eficientes, trabajar en equipo y continuar aprendiendo nuevas tecnologías.</p>
+      </header>
+
+      <!-- =========================================
+           CONTACTO
+           ========================================= -->
+
+      <section class="contact">
+        <h2>Contacto</h2>
+
+        <p>
+          <a href="mailto:mariana.lopez.dev@example.com">mariana.lopez.dev@example.com</a>
+          <a href="tel:+543514567890">+54 351 456-7890</a>
+        </p>
+        <p>
+          <!-- Repetir este enlace por cada perfil o plataforma que quieras mostrar.
+               Ejemplos: LinkedIn, GitHub, GitLab, portfolio, redes sociales, etc.
+               Reemplazar [RED-SOCIAL-LINK] por la URL completa y [RED-SOCIAL-NOMBRE]
+               por el texto visible del enlace. El QR se genera automáticamente. -->
+          <a href="https://www.linkedin.com/in/mariana-sofia-lopez-demo/" data-qr="true">LinkedIn</a>
+          <a href="https://github.com/marianasofia-demo" data-qr="true">GitHub</a>
+          <!-- <a href="[RED-SOCIAL-LINK-2]" data-qr="true">[RED-SOCIAL-NOMBRE-2]</a> -->
+        </p>
+      </section>
+
+      <!-- =========================================
+           CONTENIDO PRINCIPAL
+           ========================================= -->
+
+      <div class="cv-main">
+        <!-- EXPERIENCIA -->
+
+        <section class="experience">
+          <h2>Experiencia Profesional</h2>
+
+          <article class="experience-entry">
+            <div class="entry-header">
+              <h3>Desarrolladora Backend Junior</h3>
+              <span class="date">2023 - Presente</span>
+            </div>
+
+            <p class="institution">Nexo Digital — Córdoba</p>
+
+            <ul>
+              <li>Desarrollo y mantenimiento de servicios backend utilizando Java y Spring Boot.</li>
+              <li>Implementación de endpoints REST e integración con bases de datos MySQL.</li>
+              <li>Colaboración en revisiones de código y control de versiones con Git y GitHub.</li>
+            </ul>
+
+            <h4>Proyectos destacados</h4>
+
+            <ul>
+              <li>Optimización de consultas SQL para mejorar tiempos de respuesta.</li>
+              <li>Documentación técnica de servicios y procesos de desarrollo.</li>
+            </ul>
+          </article>
+
+          <!--
+          Repetir .experience-entry por cada experiencia.
+          Eliminar .institution si no corresponde.
+          Eliminar h4 + ul si no existe una subsección.
+          -->
+        </section>
+
+        <!-- EDUCACIÓN -->
+
+        <section class="education">
+          <h2>Educación</h2>
+
+          <article class="education-entry">
+            <div class="entry-header">
+              <h3>Tecnicatura Superior en Desarrollo de Software</h3>
+              <span class="date">2020 - 2023</span>
+            </div>
+
+            <p class="institution">Instituto Superior Córdoba</p>
+
+            <ul>
+              <li>Graduada. Promedio: 8,7.</li>
+            </ul>
+
+            <h4>Proyectos académicos</h4>
+
+            <ul>
+              <li>API REST para una aplicación de gestión de inventario.</li>
+              <li>Aplicación web de reservas con persistencia en MySQL.</li>
+            </ul>
+          </article>
+
+          <!--
+          Repetir .education-entry por cada formación.
+          -->
+        </section>
+      </div>
+
+      <!-- =========================================
+           COLUMNA LATERAL
+           ========================================= -->
+
+      <div class="cv-columns">
+        <aside class="cv-sidebar">
+          <!-- CERTIFICADOS-->
+
+          <section class="certifications">
+            <h2>Cursos y certificaciones</h2>
+
+            <ul>
+              <li>
+                Fundamentos de desarrollo backend —
+                <a href="https://demo.example.com/certificados/backend-demo" data-qr="true">Academia Código</a>
+              </li>
+              <!-- Repetir un <li> por cada curso o certificación. -->
+            </ul>
+          </section>
+
+          <!-- IDIOMAS -->
+
+          <section class="languages">
+            <h2>Idiomas</h2>
+
+            <ul>
+              <li>
+                Inglés (B2)
+                <a href="https://demo.example.com/certificados/ingles-demo" data-qr="true">Certificado de idioma</a>
+              </li>
+              <li>Español (Nativo)</li>
+              <!-- Repetir un <li> por cada idioma. -->
+            </ul>
+          </section>
+
+                    <!-- HABILIDADES TÉCNICAS -->
+
+          <section class="technical-skills">
+            <h2>Habilidades Técnicas</h2>
+
+            <p>
+              <strong>Programación:</strong>
+              Java • Python • JavaScript
+            </p>
+
+            <p>
+              <strong>Bases de datos:</strong>
+              MySQL • PostgreSQL • SQL
+            </p>
+
+            <p>
+              <strong>Herramientas:</strong>
+              Git • GitHub • Docker • Visual Studio Code
+            </p>
+
+            <!-- Repetir según las categorías existentes -->
+          </section>
+
+          <!-- HABILIDADES BLANDAS -->
+
+          <section class="soft-skills">
+            <h2>Habilidades Blandas</h2>
+
+            <p>Comunicación • Trabajo en equipo • Organización • Pensamiento analítico • Adaptabilidad</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <!--
+      QRs para enlaces seleccionados: agregar data-qr="true" al <a>.
+      Los QRs se generan junto a los enlaces y su visibilidad depende del CSS: 
+      CV-ATS.css debe ocultarlos y CV-Imprimir.css debe mostrarlos.
+      La biblioteca se carga desde CDN, por lo que se necesita conexión a Internet
+      al abrir el HTML y generar/imprimir los QRs.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      (() => {
+        function generarQrs() {
+          if (typeof QRCode === "undefined") return;
+
+          document.querySelectorAll('a[data-qr="true"]').forEach((enlace) => {
+            const hrefOriginal = enlace.getAttribute("href") || "";
+            if (!hrefOriginal || hrefOriginal.includes("[")) return;
+            const destino = enlace.href;
+            if (!destino || !/^https?:\/\//i.test(destino)) return;
+            if (enlace.querySelector(".qr-code")) return;
+
+            const contenedor = document.createElement("span");
+            contenedor.className = "qr-code";
+            contenedor.setAttribute("aria-hidden", "true");
+            contenedor.setAttribute("data-qr-for", destino);
+            // El QR queda dentro del enlace; el CSS lo coloca debajo del texto.
+            enlace.appendChild(contenedor);
+
+            new QRCode(contenedor, {
+              text: destino,
+              width: 96,
+              height: 96,
+              correctLevel: QRCode.CorrectLevel.M,
+            });
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", generarQrs);
+        } else {
+          generarQrs();
+        }
+      })();
+    </script>
+  </body>
+</html>
