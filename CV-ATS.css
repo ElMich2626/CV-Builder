@@ -1,6 +1,10 @@
+/* =========================================
+   CV ATS - Estilo simple y legible
+   ========================================= */
+
 @page {
     size: A4;
-    margin: 5mm;
+    margin: 4mm;
 }
 
 * {
@@ -8,7 +12,7 @@
 }
 
 html {
-    font-size: 11pt;
+    font-size: 10.5pt;
 }
 
 body {
@@ -16,7 +20,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #000;
     background: #fff;
-    line-height: 1.35;
+    line-height: 1.2;
 }
 
 .cv {
@@ -28,10 +32,12 @@ body {
   display: none !important;
 }
 
-/* Encabezado */
+/* =========================================
+   Encabezado
+   ========================================= */
 
 .cv-header {
-    margin-bottom: 14px;
+    margin-bottom: 9px;
 }
 
 h1 {
@@ -44,15 +50,46 @@ h1 {
     margin: 0;
 }
 
-/* Secciones */
+
+/* =========================================
+   Contacto en un solo renglón
+   ========================================= */
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    font-size: 9pt;
+}
+
+.contact h2 {
+    flex: 0 0 100%;
+    margin: 0 0 7px 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+    font-size: 13pt;
+}
+
+.contact p {
+    display: contents;
+}
+
+.contact a {
+    white-space: nowrap;
+}
+
+/* =========================================
+   Secciones
+   ========================================= */
 
 section {
-    margin-bottom: 14px;
+    margin-bottom: 9px;
 }
 
 h2 {
     margin: 0 0 7px 0;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
     font-size: 13pt;
     line-height: 1.2;
     border-bottom: 1px solid #000;
@@ -66,6 +103,8 @@ h3 {
 
 h4 {
     margin: 8px 0 3px 0;
+    margin-top: 5px;
+    margin-bottom: 4px;
     font-size: 11pt;
 }
 
@@ -77,7 +116,9 @@ h4 {
     margin-bottom: 0;
 }
 
-/* Lineas entre secciones */
+/* =========================================
+   Lineas entre secciones
+   ========================================= */
 
 .experience-entry + .experience-entry {
     border-top: 1px solid #999;
@@ -91,7 +132,9 @@ h4 {
     margin-top: 7px;
 }
 
-/* Entradas de experiencia y educación */
+/* =========================================
+   Entradas de experiencia y educación
+   ========================================= */
 
 .entry-header {
     display: flex;
@@ -109,32 +152,42 @@ h4 {
     margin: 2px 0 4px 0;
 }
 
-/* Listas */
+/* =========================================
+   Listas
+   ========================================= */
 
 ul {
     margin: 4px 0 7px 0;
+    margin-top: 2px;
+    margin-bottom: 4px;
     padding-left: 18px;
 }
 
 li {
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
-/* Párrafos */
+/* =========================================
+   Párrafos
+   ========================================= */
 
 p {
     margin-top: 0;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
-/* Enlaces */
+/* =========================================
+   Enlaces
+   ========================================= */
 
 a {
     color: #000;
     text-decoration: none;
 }
 
-/* Evitar cortes poco convenientes */
+/* =========================================
+   Evitar cortes poco convenientes
+   ========================================= */
 
 .experience-entry,
 .education-entry {
