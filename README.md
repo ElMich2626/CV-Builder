@@ -7,7 +7,7 @@ Plantilla HTML y CSS para crear currículums vitae personalizados y exportarlos 
 - `Plantilla.html`: plantilla HTML que contiene la estructura y los campos que se deben completar con la información personal y profesional.
 - `CV-ATS.css`: hoja de estilos sencilla, pensada para facilitar la lectura y extracción de información por sistemas ATS.
 - `CV-Imprimir.css`: hoja de estilos con diseño visual de dos columnas, colores y códigos QR para determinados enlaces.
-- `Demostracion.html`: ejemplo de una plantilla completada para mostrar el resultado.
+- `Demo CV.html`: ejemplo de una plantilla completada para mostrar el resultado.
 
 ## Cómo utilizarlo
 
