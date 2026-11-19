@@ -79,6 +79,26 @@ h1 {
     white-space: nowrap;
 }
 
+/* Mostrar la URL real de LinkedIn y GitHub en lugar del texto descriptivo */
+.contact a[href^="https://"] {
+    font-size: 0;
+}
+
+.contact a[href^="https://"]::after {
+    content: attr(href);
+    font-size: 9pt;
+}
+
+/* Mostrar las URL de los certificados */
+.certifications a[href^="https://"] {
+    font-size: 0;
+}
+
+.certifications a[href^="https://"]::after {
+    content: attr(href);
+    font-size: 9pt;
+}
+
 /* =========================================
    Secciones
    ========================================= */
